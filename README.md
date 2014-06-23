@@ -1,5 +1,7 @@
 ## calendarjs
 
+[![Build Status](https://travis-ci.org/sjlu/calendarjs.svg?branch=0.0.2)](https://travis-ci.org/sjlu/calendarjs)
+
 A simple javascript component to help you create weeks in a month
 that is properly displayable.
 
