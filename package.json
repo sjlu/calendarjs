@@ -1,6 +1,6 @@
 {
   "name": "calendarjs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Javascript component to creating calendars.",
   "main": "index.js",
   "scripts": {
