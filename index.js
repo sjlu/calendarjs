@@ -1,5 +1,4 @@
 var moment = require('moment');
-var _ = require('lodash');
 
 var Calendar = (function() {
 
@@ -38,9 +37,10 @@ var Calendar = (function() {
     var w; // reused variable as a "week"
 
     // defaults
-    opts = _.defaults(opts || {}, {
-      withOtherMonthDays: true
-    });
+    opts = opts || {};
+    if (opts.withOtherMonthDays === undefined) {
+      opts.withOtherMonthDays = true;
+    }
 
     // we will fill in this array
     var weeks = [];
