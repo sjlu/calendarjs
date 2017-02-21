@@ -60,7 +60,7 @@ var Calendar = (function() {
       w.push(this.createDay(m));
 
       // advance one day
-      m.add('days', 1);
+      m.add(1, 'days');
       d++;
     }
 
@@ -73,18 +73,18 @@ var Calendar = (function() {
     // and last weeks if applicable.
     if (opts.withOtherMonthDays) {
       w = weeks[0];
-      m = moment(this.moment).subtract('days', 1);
+      m = moment(this.moment).subtract(1, 'days');
       while (w.length < 7) {
         w.unshift(this.createDay(m));
-        m.subtract('days', 1);
+        m.subtract(1, 'days');
       }
       weeks[0] = w;
 
       w = weeks[weeks.length-1];
-      m = moment(this.moment).add('months', 1);
+      m = moment(this.moment).add(1, 'months');
       while (w.length < 7) {
         w.push(this.createDay(m));
-        m.add('day', 1);
+        m.add(1, 'day');
       }
       weeks[weeks.length-1] = w;
     }
