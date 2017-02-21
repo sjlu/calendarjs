@@ -3,9 +3,8 @@ var assert = require('assert');
 
 describe('GenericTest', function() {
 
-  var calendar = new Calendar(2014, 6); // June 2014
+  var calendar = new Calendar(2017, 2); // Feb 2017
   var cal = calendar.generate();
-
 
   it('should give me a calendar', function() {
     assert.notEqual(cal.length, 0);
@@ -23,6 +22,18 @@ describe('GenericTest', function() {
         assert.equal(cal[w][d].day, d);
       }
     }
+  });
+  
+  it('should return a proper first day', function() {
+    assert.equal(cal[0][0].year, 2017)
+    assert.equal(cal[0][0].month, 1)
+    assert.equal(cal[0][0].date, 29)
+  });
+
+  it('should return a proper last day', function() {
+    assert.equal(cal[4][6].year, 2017)
+    assert.equal(cal[4][6].month, 3)
+    assert.equal(cal[4][6].date, 4)
   });
 
 });
