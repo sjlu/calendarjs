@@ -28,7 +28,8 @@ var Calendar = (function() {
       month: moment.month() + 1, // [0, 11]
       date: moment.date(),
       day: moment.day(),
-      year: moment.year()
+      year: moment.year(),
+      dayOfYear: moment.dayOfYear()
     };
   };
 

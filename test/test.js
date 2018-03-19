@@ -23,17 +23,19 @@ describe('GenericTest', function() {
       }
     }
   });
-  
+
   it('should return a proper first day', function() {
     assert.equal(cal[0][0].year, 2017)
     assert.equal(cal[0][0].month, 1)
     assert.equal(cal[0][0].date, 29)
+    assert.equal(cal[0][0].dayOfYear, 29)
   });
 
   it('should return a proper last day', function() {
     assert.equal(cal[4][6].year, 2017)
     assert.equal(cal[4][6].month, 3)
     assert.equal(cal[4][6].date, 4)
+    assert.equal(cal[4][6].dayOfYear, 63)
   });
 
 });
