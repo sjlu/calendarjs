@@ -38,4 +38,9 @@ describe('GenericTest', function() {
     assert.equal(cal[4][6].dayOfYear, 63)
   });
 
+  it('should have 6 weeks of data', function () {
+    var cal2 = calendar.generate({ withStaticLength: true });
+    assert.equal(cal2.length, 6)
+  });
+
 });

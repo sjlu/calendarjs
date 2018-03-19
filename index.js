@@ -43,6 +43,10 @@ var Calendar = (function() {
       opts.withOtherMonthDays = true;
     }
 
+    if (opts.withStaticLength === undefined) {
+      opts.withStaticLength = false;
+    }
+
     // we will fill in this array
     var weeks = [];
 
@@ -87,7 +91,19 @@ var Calendar = (function() {
         w.push(this.createDay(m));
         m.add(1, 'day');
       }
-      weeks[weeks.length-1] = w;
+      weeks[weeks.length - 1] = w;
+
+      // if 5 weeks have been constructed, add one more
+      // to keep consistency with other months with 6
+      // weeks constructed
+      if (weeks.length === 5 && opts.withStaticLength) {
+        w = []
+        while (w.length < 7) {
+          w.push(this.createDay(m));
+          m.add(1, 'day');
+        }
+        weeks.push(w);
+      }
     }
 
     return weeks;
