@@ -43,7 +43,7 @@ var Calendar = (function() {
     }
 
     if (opts.withStaticLength === undefined) {
-      opts.withStaticLength = true;
+      opts.withStaticLength = false;
     }
 
     // we will fill in this array
