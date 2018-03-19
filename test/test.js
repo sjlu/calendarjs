@@ -36,4 +36,8 @@ describe('GenericTest', function() {
     assert.equal(cal[4][6].date, 4)
   });
 
+  it('should have 6 weeks of data', function () {
+    assert.equal(cal.length, 6)
+  });
+
 });
