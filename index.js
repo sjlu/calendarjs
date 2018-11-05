@@ -18,7 +18,7 @@ var Calendar = (function() {
 
     // set to the beginning of the month;
     this.moment.date(1);
-    this.day = day;
+    this.day = day || 0;
   }
 
   Calendar.prototype.daysOfWeekStrings = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
