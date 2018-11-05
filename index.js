@@ -2,7 +2,7 @@ var moment = require('moment');
 
 var Calendar = (function() {
 
-  function Calendar(year, month) {
+  function Calendar(year, month, day) {
     this.moment = moment();
 
     if (year) {
@@ -10,7 +10,7 @@ var Calendar = (function() {
     }
 
     if (month) {
-      if ("number" === typeof month) {
+      if ('number' === typeof month) {
         month--; // to offset moment cause moment "0" = Jan.
       }
       this.moment.month(month);
@@ -18,6 +18,7 @@ var Calendar = (function() {
 
     // set to the beginning of the month;
     this.moment.date(1);
+    this.day = day;
   }
 
   Calendar.prototype.daysOfWeekStrings = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -56,7 +57,7 @@ var Calendar = (function() {
     var d = 1;
     while (d <= daysInMonth) {
       // finish and close off the week
-      if (m.day() === 0 && w.length) {
+      if (m.day() === this.day && w.length) {
         weeks.push(w);
         w = [];
       }
@@ -97,7 +98,7 @@ var Calendar = (function() {
       // to keep consistency with other months with 6
       // weeks constructed
       if (weeks.length === 5 && opts.withStaticLength) {
-        w = []
+        w = [];
         while (w.length < 7) {
           w.push(this.createDay(m));
           m.add(1, 'day');
