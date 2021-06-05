@@ -1,6 +1,6 @@
-var moment = require('moment');
+const moment = require('moment');
 
-var Calendar = (function() {
+const Calendar = (function() {
 
   function Calendar(year, month, day) {
     this.moment = moment();
@@ -35,8 +35,8 @@ var Calendar = (function() {
   };
 
   Calendar.prototype.generate = function(opts) {
-    var m; // reused variable for moment()
-    var w; // reused variable as a "week"
+    let m; // reused variable for moment()
+    let w; // reused variable as a "week"
 
     // defaults
     opts = opts || {};
@@ -49,12 +49,12 @@ var Calendar = (function() {
     }
 
     // we will fill in this array
-    var weeks = [];
+    let weeks = [];
 
     w = [];
     m = moment(this.moment);
-    var daysInMonth = this.moment.daysInMonth();
-    var d = 1;
+    let daysInMonth = this.moment.daysInMonth();
+    let d = 1;
     while (d <= daysInMonth) {
       // finish and close off the week
       if (m.day() === this.day && w.length) {
